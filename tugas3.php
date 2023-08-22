@@ -19,16 +19,14 @@
     </form>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $J = $_POST["jam"];
-        $M = $_POST["menit"];
-        $D = $_POST["detik"];
+    if ($_POST) {
+        $jam = $_POST['jam'];
+        $menit = $_POST['menit'];
+        $detik = $_POST['detik'];
+        $td;
 
-
-        $Td;
-
-        if ($Td = $J * 3600 + $M * 60 + $D) {
-            echo "$Td";
+        if ($td = $jam * 3600 + $menit * 60 + $detik) {
+            echo "$td Detik";
         }
     }
     ?>
